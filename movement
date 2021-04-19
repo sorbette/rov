@@ -1,0 +1,34 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Movement : MonoBehaviour
+{
+    public float speed = 0.02f;
+    private GameObject rov;
+    void Start()
+    {
+        StartCoRoutine(columnchange())
+
+    }
+
+
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Translate(Vector3.forward * Time.deltaTime * speed);
+        
+
+        private IEnumerator columnchange()
+        {
+            yield return new WaitForSeconds(5);
+            transform.Rotate(180.0f, 0.0f, 0.0f, Space.Self);
+            transform.Translate(speed * Vector3.forward);
+            transform.Rotate(0.0f, 0.2f, 0.0f, Space.Self);
+        }
+    }
+
+}
+    
